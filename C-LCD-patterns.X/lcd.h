@@ -87,10 +87,6 @@ void LCD_LOCATE(char row, char column);
 void LCD_setCGRAM_address(void);
 
 void LCD_writeCGRAM(void);
-/*
-void LCD_CMD_CGRAM(char cmd_CGRAM);
-void LCD_readCGRAM(char charcode);
-*/ 
 
 /* Enable is RE0 */
 #define LCD_Enable_High LATE |= 0x01

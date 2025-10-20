@@ -3,41 +3,54 @@
 
 /* Config Timer0 */
 void TIMER0_Initialize(void)
-{
-	/* Timer0 disabled; 16-bit */
-	T0CON0 = 0x10;
+{ 
+	/* Timer0 disabled; 16-bit; no postscaler */
+	/*  T0CON0 = 0x10; */
+    T0CON0bits.MD16 = 1;
+       
+    /* HFINTOSC; counter not synchronized; prescaler 1:2 */
+	/* T0CON1 = 0x71; */
+    T0CON1bits.CS = 0b011;
+    T0CON1bits.ASYNC = 1;
+    T0CON1bits.CKPS = 0b0001;
     
-    /* HFINTOSC; counter not synchronized; prescaler 1:16 */
-	T0CON1 = 0x74;
-    
+    /* Load TMR0 with initial value (hex) */
+    /* tCLK x counts  x prescaler = TMR0 counting time */
+    /* 1/64MHz * (65535-33535) * 2 =  1 ms */
+	TMR0H = 0x82;
+	TMR0L = 0xFF;
 }
 
 /* Timer0 Delay = 1 ms x Time */
-void TIMER0_Delay_1ms(unsigned int Time)
+void TIMER0_Delay_ms(uint16_t Time)
 {
-	
-	/* Load TMR0 with initial value FC17(hex) = 64535(dec) */
-    /* (1/1MHz ) x 1000 x 1 = 1 ms */
-	TMR0H = 0xFC;
-	TMR0L = 0x17;
-
     /* Timer0 enabled; 16-bit */
-	T0CON0 |= 0x80;
-    
+	/* T0CON0 |= 0x80; */
+    T0CON0bits.EN = 1;
+        
     while (Time != 0x00)
         {
     
     	/* Wait for TMR0IF = 1 */
-        while ((PIR3 & 0x80) != 0x80)
+        /* while ((PIR3 & 0x80) != 0x80) */
+        while (PIR3bits.TMR0IF != 1)
             ;
         
-        /* Clede coordenada en el LCDar TMR0IF bit */
-        PIR3 &= 0x7F;
+        /* Clear TMR0IF bit */
+        /* PIR3 &= 0x7F; */
+        PIR3bits.TMR0IF = 0;
         
         /* Decrement Time variable */
-        Time--;
+        Time-=1;
+        
+        /* Reload TMR0 with value (hex) */
+        /* tCLK1 x counts  x prescaler = TMR0 counting time */
+        /* 1/64MHz * (65535-33535) * 1 =  1 ms */
+	    TMR0H = 0x82;
+	    TMR0L = 0xFF;
         }   
     
     /* Timer0 disabled; 16-bit */
-	T0CON0 &= 0x7F;
+	/* T0CON0 &= 0x7F; */
+    T0CON0bits.EN = 0;
 }

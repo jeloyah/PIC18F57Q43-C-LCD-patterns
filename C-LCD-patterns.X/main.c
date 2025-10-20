@@ -46,6 +46,7 @@ void main(void) {
     /* Store new characters on LCD memory */
     LCD_writeCGRAM();
     
+    /* Clear LCD */
     LCD_CLEAR_DISPLAY();
         
     /* infinite loop */
