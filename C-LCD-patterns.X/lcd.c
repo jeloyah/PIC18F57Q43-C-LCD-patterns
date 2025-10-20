@@ -17,19 +17,19 @@ void LCD_Initialize(void)
 {
     /* 4-bit operation */
 	LCD_CMD(0x02);
-    TIMER0_Delay_1ms(1);
+    TIMER0_Delay_ms(1);
       
     /* 2-line display, display on */
     LCD_CMD(0x28);
-    TIMER0_Delay_1ms(1);
+    TIMER0_Delay_ms(1);
     
     /* Display On, cursor off, blink off */
     LCD_CMD(0x0C);
-    TIMER0_Delay_1ms(1);
+    TIMER0_Delay_ms(1);
   
     /* Entry mode set, increment mode */
     LCD_CMD(0x06);
-    TIMER0_Delay_1ms(1);
+    TIMER0_Delay_ms(1);
 }
 
 void LCD_printchar(char ascode)
@@ -87,14 +87,14 @@ void LCD_CMD(char cmd_data)
       LCD_ENABLE();
       LCD_Port = ((cmd_data << 4) & 0xF0);
       LCD_ENABLE();
-      TIMER0_Delay_1ms(2);
+      TIMER0_Delay_ms(2);
 }
 
 /* Toggle Enable */
 void LCD_ENABLE (void)
 {
       LCD_Enable_High;
-      TIMER0_Delay_1ms(1);
+      TIMER0_Delay_ms(1);
       LCD_Enable_Low;
 }
 
@@ -102,7 +102,7 @@ void LCD_ENABLE (void)
 void LCD_CLEAR_DISPLAY(void)
 {
       LCD_CMD(0x01);
-      TIMER0_Delay_1ms(2);
+      TIMER0_Delay_ms(2);
 }
 
 /* Sets Character Generator RAM address */
@@ -116,7 +116,7 @@ void LCD_setCGRAM_address(void)
         //LCD_Port = ((CGRAM_address << 4) & 0xF0);;
         LCD_Port = 0x00;
         LCD_ENABLE();
-        TIMER0_Delay_1ms(1);
+        TIMER0_Delay_ms(1);
 }
 
 /* Store new characters in CGRAM */
@@ -179,7 +179,7 @@ void LCD_CMD_CGRAM(char cmd_CGRAM)
       LCD_ENABLE();
       LCD_Port = ((cmd_CGRAM << 4) & 0xF0);
       LCD_ENABLE();
-      TIMER0_Delay_1ms(2);
+      TIMER0_Delay_ms(2);
 }
  
 void LCD_readCGRAM(char charcode)
@@ -188,6 +188,6 @@ void LCD_readCGRAM(char charcode)
         LCD_RW_High;
         LCD_Port = charcode;
         LCD_ENABLE();
-        TIMER0_Delay_1ms(1);
+        TIMER0_Delay_ms(1);
 }
  */
