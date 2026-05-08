@@ -3,7 +3,7 @@
 #include "main.h"
 #include "clock.h"
 #include "gpio.h"
-#include "timer0.h"
+#include "timer1.h"
 #include "lcd.h"
 #include "ioc.h"
 
@@ -12,6 +12,11 @@ void main(void) {
     
     /* System Clock Initialization */
 	CLOCK_Initialize();
+    
+    /* Config Timer1 */
+    TIMER1_Initialize();
+    
+    TIMER1_Delay_ms(100);
     
     /* Config PortA */
     PortA_Initialize();
@@ -30,10 +35,7 @@ void main(void) {
     
     /* Config PortF */
     PortF_Initialize();
-    
-    /* Config Timer0 */
-    TIMER0_Initialize();
-    
+     
     /* Config IOC */
     IOC_Initialize();
         

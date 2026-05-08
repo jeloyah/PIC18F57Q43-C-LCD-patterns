@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=clock.c gpio.c configbits.c timer0.c lcd.c main.c ioc.c
+SOURCEFILES_QUOTED_IF_SPACED=clock.c gpio.c configbits.c lcd.c main.c ioc.c /home/edson/Documents/MPLABXprojects/MPLABX-C-LCD-patterns-git/C-LCD-patterns.X/timer1.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/clock.p1 ${OBJECTDIR}/gpio.p1 ${OBJECTDIR}/configbits.p1 ${OBJECTDIR}/timer0.p1 ${OBJECTDIR}/lcd.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/ioc.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/clock.p1.d ${OBJECTDIR}/gpio.p1.d ${OBJECTDIR}/configbits.p1.d ${OBJECTDIR}/timer0.p1.d ${OBJECTDIR}/lcd.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/ioc.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/clock.p1 ${OBJECTDIR}/gpio.p1 ${OBJECTDIR}/configbits.p1 ${OBJECTDIR}/lcd.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/ioc.p1 ${OBJECTDIR}/_ext/1328315720/timer1.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/clock.p1.d ${OBJECTDIR}/gpio.p1.d ${OBJECTDIR}/configbits.p1.d ${OBJECTDIR}/lcd.p1.d ${OBJECTDIR}/main.p1.d ${OBJECTDIR}/ioc.p1.d ${OBJECTDIR}/_ext/1328315720/timer1.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/clock.p1 ${OBJECTDIR}/gpio.p1 ${OBJECTDIR}/configbits.p1 ${OBJECTDIR}/timer0.p1 ${OBJECTDIR}/lcd.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/ioc.p1
+OBJECTFILES=${OBJECTDIR}/clock.p1 ${OBJECTDIR}/gpio.p1 ${OBJECTDIR}/configbits.p1 ${OBJECTDIR}/lcd.p1 ${OBJECTDIR}/main.p1 ${OBJECTDIR}/ioc.p1 ${OBJECTDIR}/_ext/1328315720/timer1.p1
 
 # Source Files
-SOURCEFILES=clock.c gpio.c configbits.c timer0.c lcd.c main.c ioc.c
+SOURCEFILES=clock.c gpio.c configbits.c lcd.c main.c ioc.c /home/edson/Documents/MPLABXprojects/MPLABX-C-LCD-patterns-git/C-LCD-patterns.X/timer1.c
 
 
 
@@ -112,14 +112,6 @@ ${OBJECTDIR}/configbits.p1: configbits.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/configbits.d ${OBJECTDIR}/configbits.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/configbits.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/timer0.p1: timer0.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/timer0.p1.d 
-	@${RM} ${OBJECTDIR}/timer0.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/timer0.p1 timer0.c 
-	@-${MV} ${OBJECTDIR}/timer0.d ${OBJECTDIR}/timer0.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/timer0.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/lcd.p1: lcd.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/lcd.p1.d 
@@ -143,6 +135,14 @@ ${OBJECTDIR}/ioc.p1: ioc.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ioc.p1 ioc.c 
 	@-${MV} ${OBJECTDIR}/ioc.d ${OBJECTDIR}/ioc.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/ioc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1328315720/timer1.p1: /home/edson/Documents/MPLABXprojects/MPLABX-C-LCD-patterns-git/C-LCD-patterns.X/timer1.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/_ext/1328315720" 
+	@${RM} ${OBJECTDIR}/_ext/1328315720/timer1.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1328315720/timer1.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1  -mdebugger=none   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1328315720/timer1.p1 /home/edson/Documents/MPLABXprojects/MPLABX-C-LCD-patterns-git/C-LCD-patterns.X/timer1.c 
+	@-${MV} ${OBJECTDIR}/_ext/1328315720/timer1.d ${OBJECTDIR}/_ext/1328315720/timer1.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1328315720/timer1.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
 ${OBJECTDIR}/clock.p1: clock.c  nbproject/Makefile-${CND_CONF}.mk 
@@ -169,14 +169,6 @@ ${OBJECTDIR}/configbits.p1: configbits.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/configbits.d ${OBJECTDIR}/configbits.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/configbits.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/timer0.p1: timer0.c  nbproject/Makefile-${CND_CONF}.mk 
-	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/timer0.p1.d 
-	@${RM} ${OBJECTDIR}/timer0.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/timer0.p1 timer0.c 
-	@-${MV} ${OBJECTDIR}/timer0.d ${OBJECTDIR}/timer0.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/timer0.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
-	
 ${OBJECTDIR}/lcd.p1: lcd.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/lcd.p1.d 
@@ -200,6 +192,14 @@ ${OBJECTDIR}/ioc.p1: ioc.c  nbproject/Makefile-${CND_CONF}.mk
 	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/ioc.p1 ioc.c 
 	@-${MV} ${OBJECTDIR}/ioc.d ${OBJECTDIR}/ioc.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/ioc.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	
+${OBJECTDIR}/_ext/1328315720/timer1.p1: /home/edson/Documents/MPLABXprojects/MPLABX-C-LCD-patterns-git/C-LCD-patterns.X/timer1.c  nbproject/Makefile-${CND_CONF}.mk 
+	@${MKDIR} "${OBJECTDIR}/_ext/1328315720" 
+	@${RM} ${OBJECTDIR}/_ext/1328315720/timer1.p1.d 
+	@${RM} ${OBJECTDIR}/_ext/1328315720/timer1.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -memi=wordwrite -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto     -o ${OBJECTDIR}/_ext/1328315720/timer1.p1 /home/edson/Documents/MPLABXprojects/MPLABX-C-LCD-patterns-git/C-LCD-patterns.X/timer1.c 
+	@-${MV} ${OBJECTDIR}/_ext/1328315720/timer1.d ${OBJECTDIR}/_ext/1328315720/timer1.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/_ext/1328315720/timer1.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

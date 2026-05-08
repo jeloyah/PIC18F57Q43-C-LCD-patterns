@@ -28,8 +28,8 @@
 
 // This is a guard condition so that contents of this file are not included
 // more than once.  
-#ifndef _TIMER0_H
-#define	_TIMER0_H
+#ifndef _TIMER1_H
+#define	_TIMER1_H
 
 #include <xc.h> // include processor files - each processor file is guarded.  
 
@@ -61,10 +61,10 @@
     <p><b>Remarks:</b></p>
  */
 
-void TIMER0_Initialize(void);
-void TIMER0_Start(void);
-void TIMER0_Stop(void);
-void TIMER0_Delay_ms(uint16_t Time);
+void TIMER1_Initialize(void);
+void TIMER1_Start(void);
+void TIMER1_Stop(void);
+void TIMER1_Delay_ms(unsigned short Time);
 
 #ifdef	__cplusplus
 extern "C" {
